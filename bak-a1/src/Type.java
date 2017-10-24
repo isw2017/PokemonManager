@@ -1,5 +1,5 @@
 /**
- * Tobias Bak, Bernike Tech for git
+ * Tobias Bak, Bernike Tech
  */
 
 /**
