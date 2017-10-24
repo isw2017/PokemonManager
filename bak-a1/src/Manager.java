@@ -74,20 +74,20 @@ public class Manager {
 		Trainer trainer2=makeTrainer("Nico","Champ");
 		System.out.println("Tobis Pokemons werden hinzugefügt");
 		//Tobis Pokemons
-		Manager.matchTrainer(trainer,makePokemon("Pikachu",Type.electro));
-		Manager.matchTrainer(trainer,makePokemon("Dragoran",Type.dragon));
+		Manager.matchTrainer(trainer,makePokemon("Pikachu",Type.poison));
+		Manager.matchTrainer(trainer,makePokemon("Dragoran",Type.water));
 		//Nicos Pokemons
 		System.out.println("Nicos Pokemons werden hinzugefügt");
 		Manager.matchTrainer(trainer2,makePokemon("Glurak",Type.fire));
-		Manager.matchTrainer(trainer2,makePokemon("Zapdos",Type.electro));
-		Manager.matchTrainer(trainer2,makePokemon("Mewtu",Type.psycho));
+		Manager.matchTrainer(trainer2,makePokemon("Zapdos",Type.water));
+		Manager.matchTrainer(trainer2,makePokemon("Mewtu",Type.poison));
 		// Ausgaben
 		System.out.println("Nicos alle Pokemons:");
 		showAllPokemon(trainer2);
 		System.out.println("Tobis alle Pokemons:");
 		showAllPokemon(trainer);
-		System.out.println("Tobis alle Pokemons typ dragon:");
-		showAllTypePokemon(trainer,Type.dragon);
+		System.out.println("Tobis alle Pokemons typ fire:");
+		showAllTypePokemon(trainer,Type.fire);
 		System.out.println("Nicos alle Pokemons typ fire:");
 		showAllTypePokemon(trainer2,Type.fire);
 		System.out.println("Tobis Pokemon nr 1 :  ");

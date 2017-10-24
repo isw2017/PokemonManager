@@ -7,5 +7,5 @@
  *
  */
 public enum Type {
-	fire, water, poison, electro,eis,fly,plant,normal,ghost,psycho, dragon
+	fire, water, poison
 }
