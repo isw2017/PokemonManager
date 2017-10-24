@@ -1,6 +1,6 @@
 
 /**
- * @author Tobias Bak for git
+ * @author Tobias Bak
  *
  */
 

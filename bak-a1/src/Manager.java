@@ -3,7 +3,7 @@
  */
 
 /**
- * @author Tobias Bak for git
+ * @author Tobias Bak
  *
  */
 public class Manager {

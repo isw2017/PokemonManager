@@ -1,5 +1,5 @@
 /**
- * Tobias Bak, Bernike Tech
+ * Tobias Bak, Bernike Tech 
  */
 
 /**
