@@ -18,6 +18,9 @@ public class Trainer {
 	public void addPokemon(Pokemon pokemon) {
 		this.poks.add(pokemon);
 	}
+	public void deletePokemon(Pokemon pokemon) {
+		this.poks.remove(pokemon);
+	}
 	/**
 	 * @return the firstname
 	 */

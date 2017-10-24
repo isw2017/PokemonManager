@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /**
  * @author Tobias Bak
@@ -5,13 +6,28 @@
  */
 
 public class Pokemon {
-	
+	public ArrayList<Swap> swaps = new ArrayList<Swap>(); //Tauschliste
 	private String name;//Variable die Pokemonname speichert
 	private Type type;	//Variable die Pokemontyp speichert
 	private int number; //Variable die Pokemonnummer speichert
 	private static int nextnumber=1;//globale Variable die nächste Pokemonnummer statisch speichert
 	private Trainer trainer;
+	public boolean swapAllow;
 	
+	/**
+	 * @return the swapAllow
+	 */
+	public boolean isSwapAllow() {
+		return swapAllow;
+	}
+
+	/**
+	 * @param swapAllow the swapAllow to set
+	 */
+	public void setSwapAllow(boolean swapAllow) {
+		this.swapAllow = swapAllow;
+	}
+
 	/**
 	 * @return the name
 	 */
@@ -73,6 +89,7 @@ public class Pokemon {
 		setName(name);
 		setType(type);
 		setNumber();
+		setSwapAllow(true);
 		//  Auto-generated constructor stub
 	}
 

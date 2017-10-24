@@ -6,7 +6,15 @@
  * @author Tobias Bak
  *
  */
-public class Manager {
+public class PokemonManager {
+	/**
+	 *	@makeTrainer Methode zur erstellung eines neues Trainers
+	 *  @return gibt ein neues Objekt der Klasse Trainer zurück  
+	 */
+
+	 public static Swap doSwap(Trainer trainer1,Trainer trainer2, Pokemon pokemon1, Pokemon pokemon2) { 
+		return new Swap( trainer1, trainer2,  pokemon1,  pokemon2);
+	}
 
 	/**
 	 *	@makeTrainer Methode zur erstellung eines neues Trainers
@@ -30,6 +38,7 @@ public class Manager {
 	 public static void matchTrainer(Trainer trainer, Pokemon pokemon) {
 		trainer.addPokemon(pokemon);
 	}
+	
 	 /**
 		 *	@showPokemon Methode zur ausgabe Pokemons mit Nummer int number vom Objekt Trainer
 		 *  @return void Methode liest den Listenparameter poks des Objekts Trainer (trainer.poks)  
@@ -70,30 +79,43 @@ public class Manager {
 	
 	public static void main(String[] args) {
 		System.out.println("Trainer werden erstellt");
-		Trainer trainer=makeTrainer("Tobi","Bak");
+		Trainer trainer1=makeTrainer("Tobi","Bak");
 		Trainer trainer2=makeTrainer("Nico","Champ");
 		System.out.println("Tobis Pokemons werden hinzugefügt");
+		Pokemon pokemon1=makePokemon("Pikachu",Type.poison) ;
+		Pokemon pokemon2= makePokemon("Dragoran",Type.water);
+		Pokemon pokemon3=makePokemon("Dragoran2",Type.fire) ;
+		Pokemon pokemon4=makePokemon("Glurak",Type.fire) ;
+		Pokemon pokemon5= makePokemon("Mewtu",Type.poison);
+		Pokemon pokemon6=makePokemon("Zapdos",Type.water) ;
+		
+		
 		//Tobis Pokemons
-		Manager.matchTrainer(trainer,makePokemon("Pikachu",Type.poison));
-		Manager.matchTrainer(trainer,makePokemon("Dragoran",Type.water));
+		PokemonManager.matchTrainer(trainer1,pokemon1);
+		PokemonManager.matchTrainer(trainer1,pokemon2);
+		PokemonManager.matchTrainer(trainer1,pokemon3);
 		//Nicos Pokemons
 		System.out.println("Nicos Pokemons werden hinzugefügt");
-		Manager.matchTrainer(trainer2,makePokemon("Glurak",Type.fire));
-		Manager.matchTrainer(trainer2,makePokemon("Zapdos",Type.water));
-		Manager.matchTrainer(trainer2,makePokemon("Mewtu",Type.poison));
+		PokemonManager.matchTrainer(trainer2,pokemon4);
+		PokemonManager.matchTrainer(trainer2,pokemon5);
+		PokemonManager.matchTrainer(trainer2,pokemon6);
 		// Ausgaben
 		System.out.println("Nicos alle Pokemons:");
 		showAllPokemon(trainer2);
 		System.out.println("Tobis alle Pokemons:");
-		showAllPokemon(trainer);
-		System.out.println("Tobis alle Pokemons typ fire:");
-		showAllTypePokemon(trainer,Type.fire);
-		System.out.println("Nicos alle Pokemons typ fire:");
-		showAllTypePokemon(trainer2,Type.fire);
-		System.out.println("Tobis Pokemon nr 1 :  ");
-		showPokemon(trainer,1);
-		System.out.println("Nicos Pokemon Nr 3:");
-		showPokemon(trainer2,1);
+		showAllPokemon(trainer1);
+		
+		doSwap(trainer1,trainer1,pokemon1,pokemon2);
+		doSwap(trainer1,trainer2,pokemon3,pokemon4);
+		pokemon4.setSwapAllow(false);
+		doSwap(trainer1,trainer2,pokemon2,pokemon4);
+		pokemon4.setSwapAllow(true);
+		doSwap(trainer1,trainer2,pokemon2,pokemon4);
+		/*
+		System.out.println("Nicos alle Pokemons nach dem swap:");
+		showAllPokemon(trainer2);
+		System.out.println("Tobis alle Pokemons nach dem swap:");
+		showAllPokemon(trainer1); */
 	}
 
 }
